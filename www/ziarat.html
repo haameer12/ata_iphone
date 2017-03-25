@@ -113,7 +113,7 @@
 							if (x.item(0).value == null || x.item(0).value == "") {
 								//alert("Name must be filled out");
 								navigator.notification.alert(
-									"Name must be filled out",  // message
+									"لابد من ادخال الاسم",  // message
 									temp_function,         // callback
 									'تنبيه',            // title
 									'نعم'                  // buttonName
@@ -121,6 +121,9 @@
 								return false;
 							}
 							else{
+								
+								$("input[type='submit']").attr('disabled', 'disabled');
+								
 								var n = document.getElementsByName("name");
 								var c = document.getElementsByName("country");
 								var ci = document.getElementsByName("city");
@@ -172,6 +175,9 @@
 										'تنبيه',            // title
 										'نعم'                  // buttonName
 									);
+									
+									$("input[type='submit']").removeAttr('disabled');
+									
 								});
 							}
 						}
